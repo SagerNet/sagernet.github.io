@@ -6,8 +6,11 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
-#### 0.7-rc07
+#### 0.7-rc08
 
+* Optimized memory usage for System Tun
+* Optimized performance for 64 bit devices
+* DNS replies with original TTL
 * Bug fixes
 
 #### 0.7-rc06
