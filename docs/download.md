@@ -2,7 +2,7 @@
 
 | Release  | Vendor         | Download                          |
 |----------|----------------|-----------------------------------|
-| 0.7-rc08 | GitHub Release | [Release][app-release]            |
+| 0.7-rc09 | GitHub Release | [Release][app-release]            |
 | -        | Google Play    | [SagerNet - Play Store][app-play] |
 | -        | F-Droid        | [SagerNet - F-Droid][app-fdroid]  |
 
@@ -22,7 +22,7 @@
 
 | Release        | Vendor         | Download                                     |
 |----------------|----------------|----------------------------------------------|
-| 98.0.4758.80-1 | GitHub Release | [Release][naive-release]                     |
+| 98.0.4758.80-2 | GitHub Release | [Release][naive-release]                     |
 | -              | Google Play    | [NaïveProxy Plugin - Play Store][naive-play] |
 | -              | F-Droid        | [NaïveProxy Plugin - F-Droid][naive-fdroid]  |
 
@@ -61,7 +61,7 @@
 
 | Release | Vendor         | Download                                      |
 |---------|----------------|-----------------------------------------------|
-| 0.9.6   | GitHub Release | [Release][hysteria-release]                   |
+| 0.9.7   | GitHub Release | [Release][hysteria-release]                   |
 | -       | Google Play    | [Hysteria Plugin - Play Store][hysteria-play] |
 
 [app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.7-rc08
@@ -76,7 +76,7 @@
 
 [trojan-go-fdroid]: https://f-droid.org/packages/io.nekohasekai.sagernet.plugin.trojan_go/
 
-[naive-release]: https://github.com/SagerNet/SagerNet/releases/tag/naive-plugin-98.0.4758.80-1
+[naive-release]: https://github.com/SagerNet/SagerNet/releases/tag/naive-plugin-98.0.4758.80-2
 
 [naive-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet.plugin.naive
 
@@ -98,6 +98,6 @@
 
 [brook-fdroid]: https://f-droid.org/packages/io.nekohasekai.sagernet.plugin.brook/
 
-[hysteria-release]: https://github.com/SagerNet/SagerNet/releases/tag/hysteria-plugin-0.9.6
+[hysteria-release]: https://github.com/SagerNet/SagerNet/releases/tag/hysteria-plugin-0.9.7
 
 [hysteria-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet.plugin.hysteria
