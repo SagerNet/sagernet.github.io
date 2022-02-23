@@ -64,7 +64,7 @@
 | 0.9.7   | GitHub Release | [Release][hysteria-release]                   |
 | -       | Google Play    | [Hysteria Plugin - Play Store][hysteria-play] |
 
-[app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.7-rc08
+[app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.7-rc09
 
 [app-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet
 
