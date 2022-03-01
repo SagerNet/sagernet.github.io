@@ -61,7 +61,7 @@
 
 | Release | Vendor         | Download                                      |
 |---------|----------------|-----------------------------------------------|
-| 1.0.0   | GitHub Release | [Release][hysteria-release]                   |
+| 1.0.1   | GitHub Release | [Release][hysteria-release]                   |
 | -       | Google Play    | [Hysteria Plugin - Play Store][hysteria-play] |
 
 [app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.7-rc10
@@ -98,6 +98,6 @@
 
 [brook-fdroid]: https://f-droid.org/packages/io.nekohasekai.sagernet.plugin.brook/
 
-[hysteria-release]: https://github.com/SagerNet/SagerNet/releases/tag/hysteria-plugin-1.0.0
+[hysteria-release]: https://github.com/SagerNet/SagerNet/releases/tag/hysteria-plugin-1.0.1
 
 [hysteria-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet.plugin.hysteria
