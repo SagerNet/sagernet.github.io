@@ -22,7 +22,7 @@
 
 | Release        | Vendor         | Download                                     |
 |----------------|----------------|----------------------------------------------|
-| 98.0.4758.80-2 | GitHub Release | [Release][naive-release]                     |
+| 99.0.4844.51-1 | GitHub Release | [Release][naive-release]                     |
 | -              | Google Play    | [NaïveProxy Plugin - Play Store][naive-play] |
 | -              | F-Droid        | [NaïveProxy Plugin - F-Droid][naive-fdroid]  |
 
@@ -76,7 +76,7 @@
 
 [trojan-go-fdroid]: https://f-droid.org/packages/io.nekohasekai.sagernet.plugin.trojan_go/
 
-[naive-release]: https://github.com/SagerNet/SagerNet/releases/tag/naive-plugin-98.0.4758.80-2
+[naive-release]: https://github.com/SagerNet/SagerNet/releases/tag/naive-plugin-99.0.4844.51-1
 
 [naive-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet.plugin.naive
 
