@@ -6,6 +6,42 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta01
+
+* Disabled global http proxy by default
+* Add option to close active connections (by app)
+* Increase buffer size to support MTU lager than 8192 **1**
+* Reset connections when network changed
+* Improved china apps scanner
+* Shadowsocks 2022 protocol support **2**
+* Added XTLS protocol compatibility for VLESS and Trojan **3**
+* Added gRPC multi/raw mode
+* Updated brook support
+* Bug fixes
+
+**1**: 
+
+Using an MTU larger than the upstream interface will only improve speed in some scenarios and may result in UDP packet loss.
+
+**2**: 
+
+Added support for the following new `Shadowsocks 2022 Edition` ciphers:
+
+```
+2022-blake3-aes-128-gcm
+2022-blake3-aes-256-gcm
+2022-blake3-chacha20-poly1305
+
+```
+
+The new protocol is designed to improve UDP performance and provide full replay protection. 
+
+Although the protocol is still in draft, professionals can try to deploy it with [Shadowsocks-NET/outline-ss-server](https://github.com/Shadowsocks-NET/outline-ss-server) (recommend) or [SagerNet/v2ray-core](https://github.com/SagerNet/v2ray-core) (main branch).
+
+**3**:
+
+This protocol does not guarantee concealment.
+
 #### 0.7-rc11
 
 * Bug fixes
