@@ -6,6 +6,22 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta02
+
+* SUoT **1** support for shadowsocks and naiveproxy
+* Bug fixes
+
+**1**:
+
+[SagerNet UDP Over TCP Protocol](https://github.com/SagerNet/UoT)
+
+For shadowsocks, requires one of the following servers:
+
+* [SagerNet/outline-ss-server](https://github.com/SagerNet/outline-ss-server)
+* [SagerNet/v2ray-core](https://github.com/SagerNet/v2ray-core)
+
+For naiveproxy, replace official server with [SagerNet/forwardproxy](https://github.com/SagerNet/forwardproxy).
+
 #### 0.8-beta01
 
 * Disabled global http proxy by default
