@@ -6,6 +6,18 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta03
+
+* Performance improvements
+* Shadowsocks 2022 Extensible Identity Headers support
+* Android 13 themed icon support
+* Bug fixes
+
+Note: we have created `Clash` / `Clash For Android` fork with Shadowsocks 2022 support for Clash users:
+
+https://github.com/SagerNet/clash
+https://github.com/SagerNet/ClashForAndroid
+
 #### 0.8-beta02
 
 * SUoT **1** support for shadowsocks and naiveproxy
@@ -35,11 +47,12 @@ For naiveproxy, replace official server with [SagerNet/forwardproxy](https://git
 * Updated brook support
 * Bug fixes
 
-**1**: 
+**1**:
 
-Using an MTU larger than the upstream interface will only improve speed in some scenarios and may result in UDP packet loss.
+Using an MTU larger than the upstream interface will only improve speed in some scenarios and may result in UDP packet
+loss.
 
-**2**: 
+**2**:
 
 Added support for the following new `Shadowsocks 2022 Edition` ciphers:
 
@@ -50,9 +63,11 @@ Added support for the following new `Shadowsocks 2022 Edition` ciphers:
 
 ```
 
-The new protocol is designed to improve UDP performance and provide full replay protection. 
+The new protocol is designed to improve UDP performance and provide full replay protection.
 
-Although the protocol is still in draft, professionals can try to deploy it with [Shadowsocks-NET/outline-ss-server](https://github.com/Shadowsocks-NET/outline-ss-server) (recommend) or [SagerNet/v2ray-core](https://github.com/SagerNet/v2ray-core) (main branch).
+Although the protocol is still in draft, professionals can try to deploy it
+with [Shadowsocks-NET/outline-ss-server](https://github.com/Shadowsocks-NET/outline-ss-server) (recommend)
+or [SagerNet/v2ray-core](https://github.com/SagerNet/v2ray-core) (main branch).
 
 **3**:
 
