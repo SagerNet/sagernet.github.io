@@ -6,6 +6,13 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta04
+
+* Fix shadowsocks 2022-blake3-aes-128-gcm implementation **1**
+* Bug fixes
+
+**1**: Due to an implementation detail bug, users of 2022-blake3-aes-128-gcm will need to update both the server and client.
+
 #### 0.8-beta03
 
 * Performance improvements
