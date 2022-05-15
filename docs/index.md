@@ -6,6 +6,16 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta06
+
+* Shadowsocks 2022 TCP protocol breaking changes **1**
+
+**1**: 
+
+This change prevents a possible detection method (also present in old shadowsocks).
+
+Need to update sing ss-server or shadowsocks-rust >= v1.15.0-alpha.4 (not released yet, use master branch).
+
 #### 0.8-beta05
 
 * Fix shadowsocks 2022-blake3-aes-128-gcm implementation **1**
