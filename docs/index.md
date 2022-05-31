@@ -6,6 +6,10 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
+#### 0.8-beta08
+
+* Bug fixes
+
 #### 0.8-beta06
 
 * Shadowsocks 2022 TCP protocol breaking changes **1**
