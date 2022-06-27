@@ -6,7 +6,16 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 ### Changelog
 
-#### 0.8-rc04
+#### 0.8.1-beta02
+
+* Bug fixes
+
+#### 0.8.1-beta01
+
+* Add support for [Mieru](https://github.com/enfein/mieru)
+* Add support for [TUIC](https://github.com/EAimTY/tuic)
+
+#### 0.8-rc05
 
 * Bug fixes
 
@@ -14,7 +23,7 @@ The universal proxy toolchain for Android, written in Kotlin.
 
 * Shadowsocks 2022 TCP protocol breaking changes **1**
 
-**1**: 
+**1**:
 
 This change prevents a possible detection method (also present in old shadowsocks).
 
@@ -25,7 +34,8 @@ Need to update sing ss-server or shadowsocks-rust >= v1.15.0-alpha.4 (not releas
 * Fix shadowsocks 2022-blake3-aes-128-gcm implementation **1**
 * Bug fixes
 
-**1**: Due to an implementation detail bug, users of 2022-blake3-aes-128-gcm will need to update both the server and client.
+**1**: Due to an implementation detail bug, users of 2022-blake3-aes-128-gcm will need to update both the server and
+client.
 
 #### 0.8-beta03
 

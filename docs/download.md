@@ -1,10 +1,10 @@
 # Download
 
-| Release  | Vendor         | Download                          |
-|----------|----------------|-----------------------------------|
-| 0.8-rc04 | GitHub Release | [Release][app-release]            |
-| -        | Google Play    | [SagerNet - Play Store][app-play] |
-| -        | F-Droid        | [SagerNet - F-Droid][app-fdroid]  |
+| Release      | Vendor         | Download                          |
+|--------------|----------------|-----------------------------------|
+| 0.8.1-beta02 | GitHub Release | [Release][app-release]            |
+| -            | Google Play    | [SagerNet - Play Store][app-play] |
+| -            | F-Droid        | [SagerNet - F-Droid][app-fdroid]  |
 
 ---
 
@@ -22,7 +22,7 @@
 
 | Release         | Vendor         | Download                                     |
 |-----------------|----------------|----------------------------------------------|
-| 102.0.5005.61-1 | GitHub Release | [Release][naive-release]                     |
+| 103.0.5060.53-1 | GitHub Release | [Release][naive-release]                     |
 | -               | Google Play    | [NaïveProxy Plugin - Play Store][naive-play] |
 | -               | F-Droid        | [NaïveProxy Plugin - F-Droid][naive-fdroid]  |
 
@@ -64,7 +64,21 @@
 | 1.0.4   | GitHub Release | [Release][hysteria-release]                   |
 | -       | Google Play    | [Hysteria Plugin - Play Store][hysteria-play] |
 
-[app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.8-rc04
+---
+
+#### Mieru Plugin
+
+| Release | Vendor         | Download                                      |
+|---------|----------------|-----------------------------------------------|
+| 1.5.0   | GitHub Release | [Release][mieru-release]                      |
+
+#### TUIC Plugin
+
+| Release     | Vendor         | Download                |
+|-------------|----------------|-------------------------|
+| 0.8.0-beta0 | GitHub Release | [Release][tuic-release] |
+
+[app-release]: https://github.com/SagerNet/SagerNet/releases/tag/0.8.1-beta02
 
 [app-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet
 
@@ -101,3 +115,7 @@
 [hysteria-release]: https://github.com/SagerNet/SagerNet/releases/tag/hysteria-plugin-1.0.4
 
 [hysteria-play]: https://play.google.com/store/apps/details?id=io.nekohasekai.sagernet.plugin.hysteria
+
+[mieru-release]: https://github.com/SagerNet/SagerNet/releases/tag/mieru-plugin-1.5.0
+
+[tuic-release]: https://github.com/SagerNet/SagerNet/releases/tag/tuic-plugin-0.8.0-beta0
