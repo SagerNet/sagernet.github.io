@@ -1,0 +1,2719 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The universal proxy toolchain for Android">
+      
+      
+        <meta name="author" content="nekohasekai">
+      
+      
+        <link rel="canonical" href="https://sagernet.org/">
+      
+      <link rel="icon" href="assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>SagerNet</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sagernet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="SagerNet" class="md-header__button md-logo" aria-label="SagerNet" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SagerNet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SagerNet/SagerNet" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SagerNet
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="SagerNet" class="md-nav__button md-logo" aria-label="SagerNet" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    SagerNet
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SagerNet/SagerNet" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SagerNet
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Introduction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    Changelog
+  </a>
+  
+    <nav class="md-nav" aria-label="Changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#081-beta02" class="md-nav__link">
+    0.8.1-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#081-beta01" class="md-nav__link">
+    0.8.1-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-rc05" class="md-nav__link">
+    0.8-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta06" class="md-nav__link">
+    0.8-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta05" class="md-nav__link">
+    0.8-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta03" class="md-nav__link">
+    0.8-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta02" class="md-nav__link">
+    0.8-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta01" class="md-nav__link">
+    0.8-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc11" class="md-nav__link">
+    0.7-rc11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc10" class="md-nav__link">
+    0.7-rc10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc09" class="md-nav__link">
+    0.7-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc08" class="md-nav__link">
+    0.7-rc08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc06" class="md-nav__link">
+    0.7-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc05" class="md-nav__link">
+    0.7-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc04" class="md-nav__link">
+    0.7-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc02" class="md-nav__link">
+    0.7-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc01" class="md-nav__link">
+    0.7-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta06" class="md-nav__link">
+    0.7-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta05" class="md-nav__link">
+    0.7-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta04" class="md-nav__link">
+    0.7-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta03" class="md-nav__link">
+    0.7-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta02" class="md-nav__link">
+    0.7-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta01" class="md-nav__link">
+    0.7-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc04" class="md-nav__link">
+    0.6-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc03" class="md-nav__link">
+    0.6-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc02" class="md-nav__link">
+    0.6-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta20" class="md-nav__link">
+    0.6-beta20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta19" class="md-nav__link">
+    0.6-beta19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta15" class="md-nav__link">
+    0.6-beta15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta14" class="md-nav__link">
+    0.6-beta14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta13" class="md-nav__link">
+    0.6-beta13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta12" class="md-nav__link">
+    0.6-beta12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta11" class="md-nav__link">
+    0.6-beta11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta10" class="md-nav__link">
+    0.6-beta10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta09" class="md-nav__link">
+    0.6-beta09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta08" class="md-nav__link">
+    0.6-beta08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta06" class="md-nav__link">
+    0.6-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta05" class="md-nav__link">
+    0.6-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta04" class="md-nav__link">
+    0.6-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta03" class="md-nav__link">
+    0.6-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta01" class="md-nav__link">
+    0.6-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc25" class="md-nav__link">
+    0.5-rc25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc24" class="md-nav__link">
+    0.5-rc24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc23" class="md-nav__link">
+    0.5-rc23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc21" class="md-nav__link">
+    0.5-rc21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc20" class="md-nav__link">
+    0.5-rc20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc19" class="md-nav__link">
+    0.5-rc19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc18" class="md-nav__link">
+    0.5-rc18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc17" class="md-nav__link">
+    0.5-rc17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc16" class="md-nav__link">
+    0.5-rc16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc15" class="md-nav__link">
+    0.5-rc15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc14" class="md-nav__link">
+    0.5-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc13" class="md-nav__link">
+    0.5-rc13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc12" class="md-nav__link">
+    0.5-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc11" class="md-nav__link">
+    0.5-rc11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc10" class="md-nav__link">
+    0.5-rc10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc09" class="md-nav__link">
+    0.5-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc07" class="md-nav__link">
+    0.5-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc06" class="md-nav__link">
+    0.5-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc05" class="md-nav__link">
+    0.5-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc04" class="md-nav__link">
+    0.5-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc03" class="md-nav__link">
+    0.5-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc02" class="md-nav__link">
+    0.5-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc01" class="md-nav__link">
+    0.5-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta04" class="md-nav__link">
+    0.5-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta03" class="md-nav__link">
+    0.5-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta02" class="md-nav__link">
+    0.5-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta01" class="md-nav__link">
+    0.5-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc07" class="md-nav__link">
+    0.4-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc06" class="md-nav__link">
+    0.4-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc05" class="md-nav__link">
+    0.4-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc04" class="md-nav__link">
+    0.4-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc03" class="md-nav__link">
+    0.4-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc02" class="md-nav__link">
+    0.4-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc01" class="md-nav__link">
+    0.4-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta03" class="md-nav__link">
+    0.4-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta02" class="md-nav__link">
+    0.4-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta01" class="md-nav__link">
+    0.4-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc14" class="md-nav__link">
+    0.3-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc12" class="md-nav__link">
+    0.3-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc09" class="md-nav__link">
+    0.3-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc08" class="md-nav__link">
+    0.3-rc08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc07" class="md-nav__link">
+    0.3-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc06" class="md-nav__link">
+    0.3-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc05" class="md-nav__link">
+    0.3-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc04" class="md-nav__link">
+    0.3-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc02" class="md-nav__link">
+    0.3-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc01" class="md-nav__link">
+    0.3-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc05" class="md-nav__link">
+    0.2-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc04" class="md-nav__link">
+    0.2-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc03" class="md-nav__link">
+    0.2-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc02" class="md-nav__link">
+    0.2-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc01" class="md-nav__link">
+    0.2-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc27" class="md-nav__link">
+    0.1-rc27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc26" class="md-nav__link">
+    0.1-rc26
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc25" class="md-nav__link">
+    0.1-rc25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc24" class="md-nav__link">
+    0.1-rc24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc23" class="md-nav__link">
+    0.1-rc23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc22" class="md-nav__link">
+    0.1-rc22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc21" class="md-nav__link">
+    0.1-rc21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc20" class="md-nav__link">
+    0.1-rc20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc19" class="md-nav__link">
+    0.1-rc19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc17" class="md-nav__link">
+    0.1-rc17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc16" class="md-nav__link">
+    0.1-rc16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc15" class="md-nav__link">
+    0.1-rc15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc14" class="md-nav__link">
+    0.1-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc13" class="md-nav__link">
+    0.1-rc13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc12" class="md-nav__link">
+    0.1-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc11" class="md-nav__link">
+    0.1-rc11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="group/" class="md-nav__link">
+        Group
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="route/" class="md-nav__link">
+        Route
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="plugin/" class="md-nav__link">
+        Plugin
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    Changelog
+  </a>
+  
+    <nav class="md-nav" aria-label="Changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#081-beta02" class="md-nav__link">
+    0.8.1-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#081-beta01" class="md-nav__link">
+    0.8.1-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-rc05" class="md-nav__link">
+    0.8-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta06" class="md-nav__link">
+    0.8-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta05" class="md-nav__link">
+    0.8-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta03" class="md-nav__link">
+    0.8-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta02" class="md-nav__link">
+    0.8-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-beta01" class="md-nav__link">
+    0.8-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc11" class="md-nav__link">
+    0.7-rc11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc10" class="md-nav__link">
+    0.7-rc10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc09" class="md-nav__link">
+    0.7-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc08" class="md-nav__link">
+    0.7-rc08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc06" class="md-nav__link">
+    0.7-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc05" class="md-nav__link">
+    0.7-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc04" class="md-nav__link">
+    0.7-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc02" class="md-nav__link">
+    0.7-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-rc01" class="md-nav__link">
+    0.7-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta06" class="md-nav__link">
+    0.7-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta05" class="md-nav__link">
+    0.7-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta04" class="md-nav__link">
+    0.7-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta03" class="md-nav__link">
+    0.7-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta02" class="md-nav__link">
+    0.7-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-beta01" class="md-nav__link">
+    0.7-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc04" class="md-nav__link">
+    0.6-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc03" class="md-nav__link">
+    0.6-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-rc02" class="md-nav__link">
+    0.6-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta20" class="md-nav__link">
+    0.6-beta20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta19" class="md-nav__link">
+    0.6-beta19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta15" class="md-nav__link">
+    0.6-beta15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta14" class="md-nav__link">
+    0.6-beta14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta13" class="md-nav__link">
+    0.6-beta13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta12" class="md-nav__link">
+    0.6-beta12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta11" class="md-nav__link">
+    0.6-beta11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta10" class="md-nav__link">
+    0.6-beta10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta09" class="md-nav__link">
+    0.6-beta09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta08" class="md-nav__link">
+    0.6-beta08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta06" class="md-nav__link">
+    0.6-beta06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta05" class="md-nav__link">
+    0.6-beta05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta04" class="md-nav__link">
+    0.6-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta03" class="md-nav__link">
+    0.6-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-beta01" class="md-nav__link">
+    0.6-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc25" class="md-nav__link">
+    0.5-rc25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc24" class="md-nav__link">
+    0.5-rc24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc23" class="md-nav__link">
+    0.5-rc23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc21" class="md-nav__link">
+    0.5-rc21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc20" class="md-nav__link">
+    0.5-rc20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc19" class="md-nav__link">
+    0.5-rc19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc18" class="md-nav__link">
+    0.5-rc18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc17" class="md-nav__link">
+    0.5-rc17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc16" class="md-nav__link">
+    0.5-rc16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc15" class="md-nav__link">
+    0.5-rc15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc14" class="md-nav__link">
+    0.5-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc13" class="md-nav__link">
+    0.5-rc13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc12" class="md-nav__link">
+    0.5-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc11" class="md-nav__link">
+    0.5-rc11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc10" class="md-nav__link">
+    0.5-rc10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc09" class="md-nav__link">
+    0.5-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc07" class="md-nav__link">
+    0.5-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc06" class="md-nav__link">
+    0.5-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc05" class="md-nav__link">
+    0.5-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc04" class="md-nav__link">
+    0.5-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc03" class="md-nav__link">
+    0.5-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc02" class="md-nav__link">
+    0.5-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-rc01" class="md-nav__link">
+    0.5-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta04" class="md-nav__link">
+    0.5-beta04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta03" class="md-nav__link">
+    0.5-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta02" class="md-nav__link">
+    0.5-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-beta01" class="md-nav__link">
+    0.5-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc07" class="md-nav__link">
+    0.4-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc06" class="md-nav__link">
+    0.4-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc05" class="md-nav__link">
+    0.4-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc04" class="md-nav__link">
+    0.4-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc03" class="md-nav__link">
+    0.4-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc02" class="md-nav__link">
+    0.4-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-rc01" class="md-nav__link">
+    0.4-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta03" class="md-nav__link">
+    0.4-beta03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta02" class="md-nav__link">
+    0.4-beta02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-beta01" class="md-nav__link">
+    0.4-beta01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc14" class="md-nav__link">
+    0.3-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc12" class="md-nav__link">
+    0.3-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc09" class="md-nav__link">
+    0.3-rc09
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc08" class="md-nav__link">
+    0.3-rc08
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc07" class="md-nav__link">
+    0.3-rc07
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc06" class="md-nav__link">
+    0.3-rc06
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc05" class="md-nav__link">
+    0.3-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc04" class="md-nav__link">
+    0.3-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc02" class="md-nav__link">
+    0.3-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-rc01" class="md-nav__link">
+    0.3-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc05" class="md-nav__link">
+    0.2-rc05
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc04" class="md-nav__link">
+    0.2-rc04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc03" class="md-nav__link">
+    0.2-rc03
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc02" class="md-nav__link">
+    0.2-rc02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-rc01" class="md-nav__link">
+    0.2-rc01
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc27" class="md-nav__link">
+    0.1-rc27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc26" class="md-nav__link">
+    0.1-rc26
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc25" class="md-nav__link">
+    0.1-rc25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc24" class="md-nav__link">
+    0.1-rc24
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc23" class="md-nav__link">
+    0.1-rc23
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc22" class="md-nav__link">
+    0.1-rc22
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc21" class="md-nav__link">
+    0.1-rc21
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc20" class="md-nav__link">
+    0.1-rc20
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc19" class="md-nav__link">
+    0.1-rc19
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc17" class="md-nav__link">
+    0.1-rc17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc16" class="md-nav__link">
+    0.1-rc16
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc15" class="md-nav__link">
+    0.1-rc15
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc14" class="md-nav__link">
+    0.1-rc14
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc13" class="md-nav__link">
+    0.1-rc13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc12" class="md-nav__link">
+    0.1-rc12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#01-rc11" class="md-nav__link">
+    0.1-rc11
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="sagernet">SagerNet</h1>
+<p>The universal proxy toolchain for Android, written in Kotlin.</p>
+<p><a href="https://github.com/SagerNet/SagerNet"><img alt="" src="https://count.getloli.com/get/@nekohasekai?theme=rule34" /></a></p>
+<h3 id="changelog">Changelog</h3>
+<h4 id="081-beta02">0.8.1-beta02</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="081-beta01">0.8.1-beta01</h4>
+<ul>
+<li>Add support for <a href="https://github.com/enfein/mieru">Mieru</a></li>
+<li>Add support for <a href="https://github.com/EAimTY/tuic">TUIC</a></li>
+</ul>
+<h4 id="08-rc05">0.8-rc05</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="08-beta06">0.8-beta06</h4>
+<ul>
+<li>Shadowsocks 2022 TCP protocol breaking changes <strong>1</strong></li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>This change prevents a possible detection method (also present in old shadowsocks).</p>
+<p>Need to update sing ss-server or shadowsocks-rust &gt;= v1.15.0-alpha.4 (not released yet, use master branch).</p>
+<h4 id="08-beta05">0.8-beta05</h4>
+<ul>
+<li>Fix shadowsocks 2022-blake3-aes-128-gcm implementation <strong>1</strong></li>
+<li>Bug fixes</li>
+</ul>
+<p><strong>1</strong>: Due to an implementation detail bug, users of 2022-blake3-aes-128-gcm will need to update both the server and
+client.</p>
+<h4 id="08-beta03">0.8-beta03</h4>
+<ul>
+<li>Performance improvements</li>
+<li>Shadowsocks 2022 Extensible Identity Headers support</li>
+<li>Android 13 themed icon support</li>
+<li>Bug fixes</li>
+</ul>
+<p>Note: we have created <code>Clash</code> / <code>Clash For Android</code> fork with Shadowsocks 2022 support for Clash users:</p>
+<p>https://github.com/SagerNet/clash
+https://github.com/SagerNet/ClashForAndroid</p>
+<h4 id="08-beta02">0.8-beta02</h4>
+<ul>
+<li>SUoT <strong>1</strong> support for shadowsocks and naiveproxy</li>
+<li>Bug fixes</li>
+</ul>
+<p><strong>1</strong>:</p>
+<p><a href="https://github.com/SagerNet/UoT">SagerNet UDP Over TCP Protocol</a></p>
+<p>For shadowsocks, requires one of the following servers:</p>
+<ul>
+<li><a href="https://github.com/SagerNet/outline-ss-server">SagerNet/outline-ss-server</a></li>
+<li><a href="https://github.com/SagerNet/v2ray-core">SagerNet/v2ray-core</a></li>
+</ul>
+<p>For naiveproxy, replace official server with <a href="https://github.com/SagerNet/forwardproxy">SagerNet/forwardproxy</a>.</p>
+<h4 id="08-beta01">0.8-beta01</h4>
+<ul>
+<li>Disabled global http proxy by default</li>
+<li>Add option to close active connections (by app)</li>
+<li>Increase buffer size to support MTU lager than 8192 <strong>1</strong></li>
+<li>Reset connections when network changed</li>
+<li>Improved china apps scanner</li>
+<li>Shadowsocks 2022 protocol support <strong>2</strong></li>
+<li>Added XTLS protocol compatibility for VLESS and Trojan <strong>3</strong></li>
+<li>Added gRPC multi/raw mode</li>
+<li>Updated brook support</li>
+<li>Bug fixes</li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>Using an MTU larger than the upstream interface will only improve speed in some scenarios and may result in UDP packet
+loss.</p>
+<p><strong>2</strong>:</p>
+<p>Added support for the following new <code>Shadowsocks 2022 Edition</code> ciphers:</p>
+<pre><code>2022-blake3-aes-128-gcm
+2022-blake3-aes-256-gcm
+2022-blake3-chacha20-poly1305
+
+</code></pre>
+<p>The new protocol is designed to improve UDP performance and provide full replay protection.</p>
+<p>Although the protocol is still in draft, professionals can try to deploy it
+with <a href="https://github.com/Shadowsocks-NET/outline-ss-server">Shadowsocks-NET/outline-ss-server</a> (recommend)
+or <a href="https://github.com/SagerNet/v2ray-core">SagerNet/v2ray-core</a> (main branch).</p>
+<p><strong>3</strong>:</p>
+<p>This protocol does not guarantee concealment.</p>
+<h4 id="07-rc11">0.7-rc11</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc10">0.7-rc10</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc09">0.7-rc09</h4>
+<ul>
+<li>Added back hysteria disableMtuDiscovery option</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc08">0.7-rc08</h4>
+<ul>
+<li>Optimized memory usage for System Tun</li>
+<li>Optimized performance for 64 bit devices</li>
+<li>DNS replies with original TTL</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc06">0.7-rc06</h4>
+<ul>
+<li>Always show stop button in notification</li>
+<li>Added profile switch dialog to notification</li>
+<li>Added option to hold cpu wakelock</li>
+<li>Added cpu wakelock switcher to notification</li>
+<li>Enabled dns routing by default</li>
+<li>Removed hysteria disableMtuDiscovery option</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc05">0.7-rc05</h4>
+<ul>
+<li>Bug fixes</li>
+<li>Updated android gradle plugin</li>
+<li>Updated dependencies</li>
+<li>Refined database</li>
+<li>Add android 12 dataExtractionRules</li>
+</ul>
+<h4 id="07-rc04">0.7-rc04</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-rc02">0.7-rc02</h4>
+<ul>
+<li>Bug fixes</li>
+<li>Handling non-IP DNS query support <strong>1</strong></li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>For local DNS, Android 10+ is required for raw query.</p>
+<h4 id="07-rc01">0.7-rc01</h4>
+<ul>
+<li>Bug fixes</li>
+<li>Ping proxy now supports returning ICMP Unreachable <strong>1</strong></li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>Requires <a href="https://github.com/SagerNet/v2ray-core">SagerNet/v2ray-core</a> v5.0.4+ or routed to a freedom outbound (Bypass
+Route)</p>
+<h4 id="07-beta06">0.7-beta06</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-beta05">0.7-beta05</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="07-beta04">0.7-beta04</h4>
+<ul>
+<li>Rewritten dns part of v2ray-core <strong>1</strong></li>
+<li>Auto mtu option <strong>2</strong></li>
+<li>Shadowsocks experiment ReducedIvHeadEntropy option <strong>3</strong></li>
+<li>Fixes and Improvements</li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>Added DNS Over TLS and QUIC support, example:</p>
+<pre><code>tls://dns.google
+quic://dns.adguard.com
+</code></pre>
+<p>All available DNS schemes:</p>
+<pre><code>tcp
+tcp+local
+udp
+udp+local
+tls
+tls+local
+https
+https+local
+quic
+quic+local
+</code></pre>
+<p>Multiple DNS filled in now will query concurrently and share the cache.</p>
+<p>Not yet tested on a large scale, but you can help.</p>
+<p><strong>2</strong>:</p>
+<p>Use the MTU of the upstream network interface, enabled by default.</p>
+<p>The VPN will automatically reload if the upstream MTU changes.</p>
+<p><strong>3</strong>:</p>
+<p>This is a pull request for the experiment on GFWReport's proposal for a countermeasure for the random stream like
+protocol blocking behaviour observed on GFW.</p>
+<p>According to the gfw.report et al's research, when connecting to the impacted VPSs, GFW is likely to block binary
+protocols unless it is an HTTP, TLS, or SSH connection, or the first 6 bytes of data sent from client to server can be
+interpreted as printable characters. This suggests in addition to TLS encryption, HTTP Header, this kind of censorship
+can also be temporarily evaded by only sending printable characters in the first 6 bytes of data.</p>
+<p>This option request V2Ray to remap the first 6 bytes of IV to printable characters.</p>
+<p>Enabling it have security implications. It is possible for anyone on the privileged network path to identify the
+protocol when this experiment is enabled.</p>
+<p>See also:</p>
+<ul>
+<li>https://github.com/v2fly/v2ray-core/pull/1552</li>
+<li>https://github.com/shadowsocks/shadowsocks-rust/commit/53aab484f8daba6f5cee6896b034af943cc3d406</li>
+</ul>
+<h4 id="07-beta03">0.7-beta03</h4>
+<ul>
+<li>Add MTU settings for VPN and WireGuard</li>
+<li>Ping proxy support <strong>1</strong></li>
+</ul>
+<p><strong>1</strong>:</p>
+<p>In addition to WireGuard, requires a server of <code>SagerNet/v2ray-core v5.0.3+</code>, and a protocol that supports UDP. (can be
+used as a front proxy to support other protocols)</p>
+<p>To enable ping support on the server, add the <code>ping</code> JSON item:</p>
+<pre><code class="language-json">{
+  &quot;ping&quot;: {
+    // For more settings, check out the README
+  }
+}
+</code></pre>
+<p>Client behavior is controlled by routing; if there are no results and the default outbound is not WireGuard, ping will
+return directly.</p>
+<p>To route all ping requests, use <code>ping</code> as the <code>protocol</code> value.</p>
+<p>Pay attention to the routing order, if <code>outbound</code> is <code>Bypass</code>, the ping will be sent directly.</p>
+<h4 id="07-beta02">0.7-beta02</h4>
+<ul>
+<li>Fix plugin error</li>
+</ul>
+<h4 id="07-beta01">0.7-beta01</h4>
+<ul>
+<li>Merge v2ray-core v5.0.2</li>
+<li>Add packetEncoding <strong>1</strong> option to vmess/vless</li>
+<li>Add option <strong>2</strong> to switch root CA certificates provider</li>
+<li>Add tasker support</li>
+<li>Fix NAT test not handling incorrect source address error</li>
+</ul>
+<p><strong>1.</strong> Endpoint independent mapping NAT (aka full cone NAT) support:</p>
+<ul>
+<li><code>None</code>: disabled, uses less traffic.</li>
+<li><code>Packet</code>: packetaddr protocol, need <code>v2fly/v2ray-core v5.0.2+</code> or <code>SagerNet/v2ray-core</code>.</li>
+<li><code>XUDP</code>: xudp protocol, need <code>XTLS/Xray-core</code> or <code>SagerNet/v2ray-core</code>.</li>
+</ul>
+<p><strong>2.</strong> The built-in <a href="https://wiki.mozilla.org/CA/Included_Certificates">Mozilla Included</a> root CA certificate trust list
+with Chinese certificates removed is now used by default, or you can switch back to the system list.</p>
+<p>Note: <a href="https://github.com/SagerNet/v2ray-core">SagerNet/v2ray-core</a> is a generic v2ray-core fork that includes useful
+features and optimizations, and is now officially released.</p>
+<h4 id="06-rc04">0.6-rc04</h4>
+<ul>
+<li>Add backup function</li>
+<li>Add hysteria wechat-video mode</li>
+<li>Add option to use local dns as direct dns</li>
+<li>Fixes</li>
+</ul>
+<h4 id="06-rc03">0.6-rc03</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-rc02">0.6-rc02</h4>
+<ul>
+<li>Fixed nat test not going through proxy under gVisor and proxy only mode</li>
+<li>Removed alterId</li>
+</ul>
+<h4 id="06-beta20">0.6-beta20</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="06-beta19">0.6-beta19</h4>
+<ul>
+<li>Add network type and wifi ssid to routing rule</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta15">0.6-beta15</h4>
+<ul>
+<li>Improved system TUN</li>
+<li>New option to disable DNS record expire (TTL)</li>
+<li>New default DNS and hosts</li>
+<li>DNS behavior change: continue to the next DNS server when an error is received</li>
+<li>Hysteria faketcp protocol support (root required)</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta14">0.6-beta14</h4>
+<ul>
+<li>Replace LwIP TUN with new system stack implementation</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta13">0.6-beta13</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="06-beta12">0.6-beta12</h4>
+<ul>
+<li>Added stun NAT checker</li>
+<li>Added support for hysteria sharing link invented by Shadowrocket</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta11">0.6-beta11</h4>
+<ul>
+<li>Fixes and Improvements</li>
+<li>Updated v2ray-core, gVisor and WireGuard</li>
+</ul>
+<h4 id="06-beta10">0.6-beta10</h4>
+<ul>
+<li>Removed foreground detector due to play policy</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta09">0.6-beta09</h4>
+<ul>
+<li>Added hysteria ALPN option</li>
+<li>Updated v2ray-core, gVisor and WireGuard</li>
+</ul>
+<h4 id="06-beta08">0.6-beta08</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta06">0.6-beta06</h4>
+<ul>
+<li>New default routing rules</li>
+<li>FakeDNS removed</li>
+<li>Fixed compatibility with ssr none cipher</li>
+<li>Fixes and Improvements</li>
+</ul>
+<p>For technical reasons, removing FakeDNS fixes a upstream memory leak bug and improves performance (
+when it is not enabled).<br />
+As well, we think FakeDNS doesn't make much sense at all.</p>
+<h4 id="06-beta05">0.6-beta05</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta04">0.6-beta04</h4>
+<ul>
+<li>Added QUIC sniffer</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="06-beta03">0.6-beta03</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="06-beta01">0.6-beta01</h4>
+<ul>
+<li>Based on v2ray-core v5 (mainline)</li>
+<li>Multi-observation support: allows customization of test link and time interval for each balancer</li>
+<li>Performance improvements</li>
+<li>Snell removed</li>
+<li>NaiveProxy's <code>--insecure-concurrency</code> option support</li>
+</ul>
+<p>Note: This release contains numerous unpublished and unexplained upstream and internal changes, and some features may
+not work as expected. If possible, thanks for your testing.</p>
+<h4 id="05-rc25">0.5-rc25</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc24">0.5-rc24</h4>
+<ul>
+<li>Fixes</li>
+<li>Support specifying port in UDP DNS</li>
+</ul>
+<h4 id="05-rc23">0.5-rc23</h4>
+<ul>
+<li>Performance improvements</li>
+<li>Option to disable profile traffic statistics</li>
+<li>Filter support for OOCv1 owner field</li>
+<li>
+<p>Fixes</p>
+</li>
+<li>
+<p>Updated v2ray-core to v4.43.0</p>
+</li>
+<li>Updated shadowsocks-rust to v1.12.0-alpha</li>
+</ul>
+<h4 id="05-rc21">0.5-rc21</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc20">0.5-rc20</h4>
+<ul>
+<li>Optimized performance for gVisor mode</li>
+<li>Parsing clash's websocket early data configuration</li>
+<li>Sending shadowsocks handshake with payload if available <a href="https://github.com/v2fly/v2ray-core/pull/1292">#1292</a></li>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc19">0.5-rc19</h4>
+<ul>
+<li>Fix queryStrategy ignored <a href="https://github.com/v2fly/v2ray-core/pull/1285">#1285</a></li>
+<li>Minor fixes</li>
+</ul>
+<h4 id="05-rc18">0.5-rc18</h4>
+<ul>
+<li>Removed read subscription timeout</li>
+<li>Mux settings will be applied to naiveproxy</li>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc17">0.5-rc17</h4>
+<ul>
+<li>Fixed a serious bug in the previous version caused by updating to AGP7</li>
+</ul>
+<h4 id="05-rc16">0.5-rc16</h4>
+<ul>
+<li>Performance improvements</li>
+<li>Updated v2ray-core to v4.42.2</li>
+</ul>
+<h4 id="05-rc15">0.5-rc15</h4>
+<p><code>This release contains many v2ray-core changes, some of which have been submitted upstream for review.</code></p>
+<p><strong>Override destination option</strong></p>
+<p>Disabled by default.</p>
+<p>When disabled, <code>AsIs</code> can get the same accuracy as <code>IPIfNonMatch</code> and do not require the server to resolve the domain
+name again before connecting.</p>
+<p><strong>Resolve destination option</strong></p>
+<p>Resolve the domain (if sniffed), and overwrite the destination address based on the IPv6 Mode selection result.</p>
+<p>Note: There is no fallback to other ips when the connection fails.</p>
+<p><strong>Concurrent DNS queries</strong></p>
+<p>If you fill in more than one DNS, core will query concurrently.</p>
+<p><strong>Endpoint independent mapping</strong></p>
+<p>Fixed UDP address mapping behavior.</p>
+<p>This does not work for v*ess and mux.cool; for plugins, it depends on the plugin itself.</p>
+<p><strong>Fixes</strong></p>
+<ul>
+<li>Fixed Local DNS queries getting fallback to Remote DNS</li>
+<li>Fixed LwIP not work</li>
+<li>Other fixes</li>
+</ul>
+<p>Note: you should always use gVisor if available.</p>
+<h4 id="05-rc14">0.5-rc14</h4>
+<ul>
+<li>Fixes</li>
+<li>Performance improvements</li>
+</ul>
+<h4 id="05-rc13">0.5-rc13</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc12">0.5-rc12</h4>
+<ul>
+<li>Tun2ray implementation based on LwIP is available (try if gVisor fails)</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc11">0.5-rc11</h4>
+<ul>
+<li>CloudFlare Warp WireGuard configuration generator</li>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc10">0.5-rc10</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc09">0.5-rc09</h4>
+<ul>
+<li>WireGuard: multiple local address support (split by line)</li>
+<li>WireGuard: parse multiple local address from config file</li>
+<li>WireGuard: ipv6 support</li>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc07">0.5-rc07</h4>
+<ul>
+<li>WireGuard support (needs wireguard-plugin)</li>
+<li>Improved balancer</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc06">0.5-rc06</h4>
+<ul>
+<li>Added shadowsocks-libev (for full shadowsocks support on android L)</li>
+<li>DNS items starts with # will be ignored</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc05">0.5-rc05</h4>
+<ul>
+<li>Log viewer</li>
+<li>Simple crash reporter</li>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc04">0.5-rc04</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="05-rc03">0.5-rc03</h4>
+<ul>
+<li>SSH support</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc02">0.5-rc02</h4>
+<ul>
+<li>Refined route assets manager (download compressed resources)</li>
+<li>Removed uTLS because it caused bugs and made no sense</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-rc01">0.5-rc01</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-beta04">0.5-beta04</h4>
+<ul>
+<li>Option to enable traffic statistics (disabled by default)</li>
+<li>Fixes</li>
+</ul>
+<p>Note: According to user reports, this traffic statistics feature adds some power consumption, so an option is provided
+to choose from.</p>
+<h4 id="05-beta03">0.5-beta03</h4>
+<ul>
+<li>Included shadowsocks xchacha20-ietf-poly1305 cipher in core</li>
+<li>Included uTLS in core</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="05-beta02">0.5-beta02</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="05-beta01">0.5-beta01</h4>
+<ul>
+<li>Migrated to a <a href="https://github.com/SagerNet/v2ray-core">custom core</a> to support improved routing</li>
+<li>Traffic statistics support, including real-time display and cumulative statistics</li>
+<li>Foreground status based routing support</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="04-rc07">0.4-rc07</h4>
+<ul>
+<li>Updated Shadowsocks(R) protocol list</li>
+<li>Added plugin download assistant</li>
+<li>Added group order setting (origin/by name/by delay)</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="04-rc06">0.4-rc06</h4>
+<ul>
+<li>Fixes</li>
+<li>Full hysteria 0.8.5 support</li>
+</ul>
+<h4 id="04-rc05">0.4-rc05</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="04-rc04">0.4-rc04</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="04-rc03">0.4-rc03</h4>
+<ul>
+<li>Refined tun implementation (tun direct to v2ray-core)</li>
+<li>Refined icmp ping <a href="https://github.com/SagerNet/libping">implementation</a></li>
+<li>Refined url test implementation</li>
+<li>Fixes</li>
+</ul>
+<h4 id="04-rc02">0.4-rc02</h4>
+<ul>
+<li>Refined tun implementation (gvisor based uid routing support)</li>
+<li><a href="https://github.com/SagerNet/SagerConnect">SagerConnect</a> support</li>
+</ul>
+<h4 id="04-rc01">0.4-rc01</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="04-beta03">0.4-beta03</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="04-beta02">0.4-beta02</h4>
+<ul>
+<li>Added internal shadowsocks simple-obfs / v2ray plugin</li>
+<li>Added snell support</li>
+<li>Replaced shadowsocksr-libev with clash implementation</li>
+</ul>
+<h4 id="04-beta01">0.4-beta01</h4>
+<ul>
+<li>New core library</li>
+<li>Added golang based lwip tun2socks implementation</li>
+<li>Added gvisor based tun2socks implementation</li>
+</ul>
+<h4 id="03-rc14">0.3-rc14</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="03-rc12">0.3-rc12</h4>
+<ul>
+<li>SOCKS 4/4a support</li>
+<li>VMess experiments support</li>
+<li>Fixes</li>
+</ul>
+<h4 id="03-rc09">0.3-rc09</h4>
+<ul>
+<li>Fixes</li>
+<li>Target API 31 (Android 12)</li>
+</ul>
+<h4 id="03-rc08">0.3-rc08</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="03-rc07">0.3-rc07</h4>
+<ul>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="03-rc06">0.3-rc06</h4>
+<ul>
+<li>Added <a href="https://github.com/HyNetwork/hysteria">hysteria</a> support</li>
+<li>Fixes</li>
+<li>Updated translations</li>
+</ul>
+<h4 id="03-rc05">0.3-rc05</h4>
+<ul>
+<li>Fixes</li>
+<li>Updated translations</li>
+</ul>
+<h4 id="03-rc04">0.3-rc04</h4>
+<ul>
+<li>Epoll support for Native Forwarding</li>
+<li>Fixes</li>
+<li>New zh_CN <a href="https://github.com/SagerNet/SagerNet/issues/new/choose">issue template</a></li>
+</ul>
+<h4 id="03-rc02">0.3-rc02</h4>
+<ul>
+<li>Fixes</li>
+</ul>
+<h4 id="03-rc01">0.3-rc01</h4>
+<p>Warning: It's an incompatible update, backup your profiles and subscriptions (Clearing data is recommended).</p>
+<ul>
+<li>Experimental traffic forwarder (alternative to tun2socks, with better performance and more options)</li>
+<li>Added ICMP Ping / URL Test</li>
+<li>Option to reorder profiles by delay</li>
+<li>Option to switch method for bypass LAN</li>
+<li>Chain support for almost all protocols</li>
+<li>Protocol provider setting for Trojan and Shadowsocks AEAD profiles</li>
+<li>Option to append HTTP Proxy to VPN (Android 10+)</li>
+<li>Use 1.0.0.1 as default dns <a href="https://github.com/SagerNet/SagerNet/issues/180">#180</a></li>
+<li>Fix routing rule not applied for TCP DNS (v2ray-core master)</li>
+<li>New group structure and settings (read <a href="https://sagernet.org/group/">Group</a>)</li>
+<li>Import/Export subscription from/to link (external or qrcode)</li>
+<li>Import profile from external link</li>
+<li>Added conscrypt to provides consistent TLS 1.3 compatibility</li>
+<li>Custom config support for routing</li>
+<li>Application-based routing support</li>
+<li>Improved dns settings</li>
+<li>Updated shadowsocks-rust to v1.11.2</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="02-rc05">0.2-rc05</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="02-rc04">0.2-rc04</h4>
+<ul>
+<li>TCPing connection test</li>
+<li>Option to always show profile address</li>
+<li>Fixes and Improvements</li>
+</ul>
+<h4 id="02-rc03">0.2-rc03</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="02-rc02">0.2-rc02</h4>
+<ul>
+<li>Configuration export</li>
+<li>Balancer support</li>
+<li>More options when exporting links</li>
+<li>Optimized proxy start and stop</li>
+<li>Fixed PingTunnel plugin (now you need ROOT permission to start it)</li>
+<li>Other fixes</li>
+</ul>
+<h4 id="02-rc01">0.2-rc01</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc27">0.1-rc27</h4>
+<ul>
+<li>V2Ray rule assets manager</li>
+<li>Option to switch rule assets provider</li>
+<li>Option to enable log for debug</li>
+<li>Updated to v2ray-core 4.41.0</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc26">0.1-rc26</h4>
+<ul>
+<li>Refined IPv6 settings</li>
+<li>Updated to v2ray-core 4.40.1</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc25">0.1-rc25</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc24">0.1-rc24</h4>
+<ul>
+<li>Fixed compatibility with Lineage's VPN Hotspot</li>
+<li>Allow insecure option for v2ray and trojan profiles</li>
+<li>More alert for insecure profiles</li>
+<li>Custom config now available with Trojan-Go</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc23">0.1-rc23</h4>
+<ul>
+<li>Night mode support</li>
+<li>Tcp keep alive interval option now applied for shadowsocks-rust (v1.11.1)</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc22">0.1-rc22</h4>
+<ul>
+<li>Custom config support, read <a href="https://sagernet.org/configuration/">Configuration</a> for usage</li>
+<li><code>Early Data Header Name</code> option for V2Ray WebSocket settings</li>
+<li>Moved Xray related parts to the new fork with xray-core: <a href="https://t.me/AnXray">AnXray</a></li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc21">0.1-rc21</h4>
+<ul>
+<li>Fixed UDP connection in ShadowsocksR profiles</li>
+<li>Local response to ICMP PING requests (thanks <a href="https://github.com/rprx">@rprx</a>)</li>
+<li>Improved chain settings</li>
+</ul>
+<h4 id="01-rc20">0.1-rc20</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc19">0.1-rc19</h4>
+<ul>
+<li>Reverse proxy support</li>
+<li>Certificate options for V2Ray TLS profiles</li>
+<li>TCP DNS support (v2ray-core 4.40.0)</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc17">0.1-rc17</h4>
+<ul>
+<li><a href="https://github.com/txthinking/brook/issues/811">New Brook link</a> support</li>
+<li>Fixed connection test on Android L-M devices</li>
+<li>Minor fixes</li>
+</ul>
+<h4 id="01-rc16">0.1-rc16</h4>
+<ul>
+<li>Transparent proxy inbound support</li>
+<li>Option to change connection test URL</li>
+<li>UI Improves</li>
+<li>Minor fixes</li>
+</ul>
+<h4 id="01-rc15">0.1-rc15</h4>
+<ul>
+<li>Minor fixes</li>
+<li>Added SHA256 checksum in CI result page and GitHub release</li>
+</ul>
+<h4 id="01-rc14">0.1-rc14</h4>
+<ul>
+<li>Brook ( <a href="https://github.com/txthinking/brook">txthinking/brook</a> ) support</li>
+<li>Minor fixes</li>
+</ul>
+<h4 id="01-rc13">0.1-rc13</h4>
+<ul>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc12">0.1-rc12</h4>
+<ul>
+<li>PingTunnel ( <a href="https://github.com/esrrhs/pingtunnel">esrrhs/pingtunnel</a> ) support</li>
+<li>RelayBaton ( <a href="https://github.com/iyouport-org/relaybaton">iyouport-org/relaybaton</a> ) support</li>
+<li>Bug fixes</li>
+</ul>
+<h4 id="01-rc11">0.1-rc11</h4>
+<ul>
+<li>NaïveProxy ( <a href="https://github.com/klzgrad/naiveproxy">klzgrad/naiveproxy</a> ) support</li>
+<li>Bug fixes</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="download/" class="md-footer__link md-footer__link--next" aria-label="Next: Download" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Download
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      CC BY-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.0238f547.min.js"></script>
+      
+    
+  </body>
+</html>
